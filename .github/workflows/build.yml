@@ -55,6 +55,17 @@ jobs:
           github-token: ${{ secrets.SECRET }}
           output-file: "false"
 
+      # - name: delete branch
+      #   run: |
+      #     git push bitcoin-order-app :githubcicd
+      # - name: lint
+      #   run: |
+      #     ng lint
+      # - name: Audit 
+      #   run: |
+      #     npm audit fix
+
+
       - name: Create Release
         uses: actions/create-release@v1
         if: ${{ steps.changelog.outputs.skipped == 'false' }}
